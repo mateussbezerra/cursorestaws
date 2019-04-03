@@ -1,6 +1,7 @@
 package br.ufc.minicurso.school.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,7 +22,7 @@ public class StudentController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public Student addStudent(Student student) {
+	public Student addStudent(@RequestBody Student student) {
 		studentService.addStudent(student);
 		return student;
 	}
